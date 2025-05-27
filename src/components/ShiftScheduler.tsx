@@ -152,7 +152,7 @@ const ShiftScheduler: React.FC = () => {
                           <div className="flex items-center text-gray-600 mt-1">
                             <Clock className="w-3 h-3 mr-1 text-blue-500" />
                             <span>
-                              {formatTime(shift.startTime)} - {formatTime(shift.endTime)}
+                              {formatTime(shift.startTime)} - {formatTime(shift.end_time)}
                             </span>
                           </div>
                           {shift.notes && (

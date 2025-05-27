@@ -17,19 +17,19 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
   const [userId, setUserId] = useState('');
   const [date, setDate] = useState(initialDate || new Date().toISOString().split('T')[0]);
   const [startTime, setStartTime] = useState('09:00');
-  const [endTime, setEndTime] = useState('17:00');
+  const [end_time, setend_time] = useState('17:00');
   const [notes, setNotes] = useState('');
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!userId || !date || !startTime || !endTime) return;
+    if (!userId || !date || !startTime || !end_time) return;
     
     onSubmit({
       userId,
       date,
       startTime,
-      endTime,
+      end_time,
       notes: notes.trim() || undefined
     });
     
@@ -105,13 +105,13 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
             </div>
             
             <div>
-              <label htmlFor="endTime" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="end_time" className="block text-sm font-medium text-gray-700 mb-1">
                 End Time
               </label>
               <select
-                id="endTime"
-                value={endTime}
-                onChange={(e) => setEndTime(e.target.value)}
+                id="end_time"
+                value={end_time}
+                onChange={(e) => setend_time(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               >

@@ -68,7 +68,7 @@ export const ScheduleProvider: React.FC<ScheduleProviderProps> = ({ children }) 
     const totalShifts = userShifts.length;
     
     const totalHours = userShifts.reduce((acc, shift) => {
-      return acc + calculateHours(shift.startTime, shift.endTime);
+      return acc + calculateHours(shift.startTime, shift.end_time);
     }, 0);
     
     const averageShiftLength = totalShifts > 0 ? totalHours / totalShifts : 0;
