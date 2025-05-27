@@ -136,7 +136,7 @@ const ShiftScheduler: React.FC = () => {
               >
                 {shiftsForDay.length === 0 ? (
                   <div className="h-full flex items-center justify-center">
-                    <span className="text-xs text-gray-400">No shifts</span>
+                    <span className="text-xs text-gray-400">Sem turnos</span>
                   </div>
                 ) : (
                   <div className="space-y-2">
