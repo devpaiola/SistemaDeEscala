@@ -61,7 +61,7 @@ const Statistics: React.FC = () => {
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-sm font-medium text-gray-700">{user.name}</span>
                       <span className="text-sm text-gray-500">
-                        {stat.totalShifts} shifts ({stat.totalHours.toFixed(1)} hrs)
+                        {stat.totalShifts} Turnos ({stat.totalHours.toFixed(1)} hrs)
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
