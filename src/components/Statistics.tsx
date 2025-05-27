@@ -16,12 +16,12 @@ const Statistics: React.FC = () => {
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
       <div className="px-4 py-3 bg-gray-50 border-b border-gray-200 flex items-center">
         <BarChart2 className="w-4 h-4 mr-1.5 text-gray-500" />
-        <h2 className="text-sm font-medium text-gray-700">Estatísticas do time.</h2>
+        <h2 className="text-sm font-medium text-gray-700">Team Statistics</h2>
       </div>
       
       {users.length === 0 ? (
         <div className="px-4 py-6 text-center text-sm text-gray-500">
-          Adicione membros da equipe para ver estatísticas.
+          Add team members to see statistics.
         </div>
       ) : (
         <>
@@ -29,7 +29,7 @@ const Statistics: React.FC = () => {
             <div className="bg-blue-50 rounded-lg p-3">
               <div className="flex items-center text-blue-600 text-xs font-medium mb-1">
                 <Calendar className="w-3.5 h-3.5 mr-1" />
-                Turnos totais!
+                Total Shifts
               </div>
               <div className="text-2xl font-bold text-gray-900">{totalShifts}</div>
             </div>
@@ -37,14 +37,14 @@ const Statistics: React.FC = () => {
             <div className="bg-teal-50 rounded-lg p-3">
               <div className="flex items-center text-teal-600 text-xs font-medium mb-1">
                 <Clock className="w-3.5 h-3.5 mr-1" />
-                Horas totais!
+                Total Hours
               </div>
               <div className="text-2xl font-bold text-gray-900">{totalHours.toFixed(1)}</div>
             </div>
           </div>
           
           <div className="p-4">
-            <h3 className="text-xs font-medium text-gray-500 mb-3">Turnos por membros!</h3>
+            <h3 className="text-xs font-medium text-gray-500 mb-3">Shifts Per Team Member</h3>
             
             <div className="space-y-3">
               {sortedStats.map(stat => {
@@ -61,7 +61,7 @@ const Statistics: React.FC = () => {
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-sm font-medium text-gray-700">{user.name}</span>
                       <span className="text-sm text-gray-500">
-                        {stat.totalShifts} Turnos. ({stat.totalHours.toFixed(1)} hrs)
+                        {stat.totalShifts} shifts ({stat.totalHours.toFixed(1)} hrs)
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2.5">

@@ -10,7 +10,7 @@ export interface Shift {
   userId: string;
   date: string; // ISO string
   startTime: string; // 24h format "HH:MM"
-  end_time: string; // 24h format "HH:MM"
+  endTime: string; // 24h format "HH:MM"
   notes?: string;
 }
 

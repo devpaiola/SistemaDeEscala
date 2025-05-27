@@ -14,9 +14,9 @@ export const formatTime = (timeString: string): string => {
   return `${formattedHours}:${minutes.toString().padStart(2, '0')} ${period}`;
 };
 
-export const calculateHours = (startTime: string, end_time: string): number => {
+export const calculateHours = (startTime: string, endTime: string): number => {
   const [startHour, startMinute] = startTime.split(':').map(Number);
-  const [endHour, endMinute] = end_time.split(':').map(Number);
+  const [endHour, endMinute] = endTime.split(':').map(Number);
   
   let hours = endHour - startHour;
   let minutes = endMinute - startMinute;

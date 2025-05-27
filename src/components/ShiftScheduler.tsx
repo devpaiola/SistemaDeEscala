@@ -118,7 +118,7 @@ const ShiftScheduler: React.FC = () => {
                   className="w-full mt-1 flex items-center justify-center text-xs text-gray-500 hover:text-blue-600 py-1 rounded-md hover:bg-blue-50 transition-colors"
                 >
                   <PlusCircle className="w-3.5 h-3.5 mr-1" />
-                  <span>Adicionar</span>
+                  <span>Add</span>
                 </button>
               </div>
             );
@@ -136,7 +136,7 @@ const ShiftScheduler: React.FC = () => {
               >
                 {shiftsForDay.length === 0 ? (
                   <div className="h-full flex items-center justify-center">
-                    <span className="text-xs text-gray-400">Sem turnos!</span>
+                    <span className="text-xs text-gray-400">No shifts</span>
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -152,7 +152,7 @@ const ShiftScheduler: React.FC = () => {
                           <div className="flex items-center text-gray-600 mt-1">
                             <Clock className="w-3 h-3 mr-1 text-blue-500" />
                             <span>
-                              {formatTime(shift.startTime)} - {formatTime(shift.end_time)}
+                              {formatTime(shift.startTime)} - {formatTime(shift.endTime)}
                             </span>
                           </div>
                           {shift.notes && (
@@ -166,7 +166,7 @@ const ShiftScheduler: React.FC = () => {
                               }}
                               className="text-red-500 hover:text-red-700 transition-colors"
                             >
-                              Excluir
+                              Remove
                             </button>
                           </div>
                         </div>
