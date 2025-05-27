@@ -16,12 +16,12 @@ const Statistics: React.FC = () => {
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
       <div className="px-4 py-3 bg-gray-50 border-b border-gray-200 flex items-center">
         <BarChart2 className="w-4 h-4 mr-1.5 text-gray-500" />
-        <h2 className="text-sm font-medium text-gray-700">Team Statistics</h2>
+        <h2 className="text-sm font-medium text-gray-700">Estatísticas da equipe</h2>
       </div>
       
       {users.length === 0 ? (
         <div className="px-4 py-6 text-center text-sm text-gray-500">
-          Add team members to see statistics.
+          Adicione membros da equipe para ver estatísticas.
         </div>
       ) : (
         <>
@@ -29,7 +29,7 @@ const Statistics: React.FC = () => {
             <div className="bg-blue-50 rounded-lg p-3">
               <div className="flex items-center text-blue-600 text-xs font-medium mb-1">
                 <Calendar className="w-3.5 h-3.5 mr-1" />
-                Total Shifts
+                Turnos totais
               </div>
               <div className="text-2xl font-bold text-gray-900">{totalShifts}</div>
             </div>
@@ -37,14 +37,14 @@ const Statistics: React.FC = () => {
             <div className="bg-teal-50 rounded-lg p-3">
               <div className="flex items-center text-teal-600 text-xs font-medium mb-1">
                 <Clock className="w-3.5 h-3.5 mr-1" />
-                Total Hours
+                Total de horas
               </div>
               <div className="text-2xl font-bold text-gray-900">{totalHours.toFixed(1)}</div>
             </div>
           </div>
           
           <div className="p-4">
-            <h3 className="text-xs font-medium text-gray-500 mb-3">Shifts Per Team Member</h3>
+            <h3 className="text-xs font-medium text-gray-500 mb-3">Turnos por membro da equipe</h3>
             
             <div className="space-y-3">
               {sortedStats.map(stat => {

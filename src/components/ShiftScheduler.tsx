@@ -118,7 +118,7 @@ const ShiftScheduler: React.FC = () => {
                   className="w-full mt-1 flex items-center justify-center text-xs text-gray-500 hover:text-blue-600 py-1 rounded-md hover:bg-blue-50 transition-colors"
                 >
                   <PlusCircle className="w-3.5 h-3.5 mr-1" />
-                  <span>Add</span>
+                  <span>Adicionar</span>
                 </button>
               </div>
             );
@@ -166,7 +166,7 @@ const ShiftScheduler: React.FC = () => {
                               }}
                               className="text-red-500 hover:text-red-700 transition-colors"
                             >
-                              Remove
+                              Remover
                             </button>
                           </div>
                         </div>

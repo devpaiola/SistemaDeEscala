@@ -12,21 +12,21 @@ const UserManagement: React.FC = () => {
       <div className="px-4 py-3 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
         <h2 className="text-sm font-medium text-gray-700 flex items-center">
           <User className="w-4 h-4 mr-1.5 text-gray-500" />
-          Team Members
+          Membros do time
         </h2>
         <button
           onClick={() => setShowUserForm(true)}
           className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium rounded text-blue-700 bg-blue-100 hover:bg-blue-200 transition-colors"
         >
           <UserPlus className="w-3.5 h-3.5 mr-1" />
-          Add
+          Adicionar
         </button>
       </div>
       
       <div className="divide-y divide-gray-200">
         {users.length === 0 ? (
           <div className="px-4 py-6 text-center text-sm text-gray-500">
-            No team members added yet. Click "Add\" to get started.
+            Nenhum membro da equipe foi adicionado ainda. Clique em "Adicionar" para começar.
           </div>
         ) : (
           users.map((user) => (
