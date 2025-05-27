@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           </p>
           
           <a
-            href="https://example.com/chat"
+            href="https://img.ifunny.co/images/77d7539d66a19433452d44f307e2fa393216e99fa0ed0129ec8fe8f575d5d48d_1.jpg"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm"
