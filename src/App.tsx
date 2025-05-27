@@ -6,6 +6,7 @@ import ShiftScheduler from './components/ShiftScheduler';
 import Statistics from './components/Statistics';
 import Footer from './components/Footer';
 
+
 function App() {
   return (
     <ScheduleProvider>
