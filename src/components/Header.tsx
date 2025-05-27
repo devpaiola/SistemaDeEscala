@@ -11,7 +11,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <Calendar className="w-8 h-8 text-blue-600 mr-2" />
-            <h1 className="text-xl font-semibold text-gray-900">ShiftMaster</h1>
+            <h1 className="text-xl font-semibold text-gray-900">WorkMonitor - Escala</h1>
           </div>
           
           <div className="flex items-center space-x-4">
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
                 }`}
                 onClick={() => setViewMode('week')}
               >
-                Week
+                Semana
               </button>
               <button
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
                 }`}
                 onClick={() => setViewMode('month')}
               >
-                Month
+                Mês
               </button>
             </div>
             
