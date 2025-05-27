@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Workmonitor. Tudo nosso reservado!.
+            &copy; {new Date().getFullYear()} ShiftMaster. All rights reserved.
           </p>
           
           <a

@@ -17,19 +17,19 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
   const [userId, setUserId] = useState('');
   const [date, setDate] = useState(initialDate || new Date().toISOString().split('T')[0]);
   const [startTime, setStartTime] = useState('09:00');
-  const [end_time, setend_time] = useState('17:00');
+  const [endTime, setEndTime] = useState('17:00');
   const [notes, setNotes] = useState('');
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!userId || !date || !startTime || !end_time) return;
+    if (!userId || !date || !startTime || !endTime) return;
     
     onSubmit({
       userId,
       date,
       startTime,
-      end_time,
+      endTime,
       notes: notes.trim() || undefined
     });
     
@@ -40,7 +40,7 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
     <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-xl w-full max-w-md p-6 animate-fadeIn">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-semibold text-gray-900">Mudança de horário</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Schedule Shift</h2>
           <button 
             onClick={onClose}
             className="text-gray-400 hover:text-gray-500 transition-colors"
@@ -52,7 +52,7 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="userId" className="block text-sm font-medium text-gray-700 mb-1">
-              Membro do time
+              Team Member
             </label>
             <select
               id="userId"
@@ -61,7 +61,7 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
             >
-              <option value="">Selecione o membro do time</option>
+              <option value="">Select a team member</option>
               {users.map(user => (
                 <option key={user.id} value={user.id}>
                   {user.name} ({user.role})
@@ -72,7 +72,7 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
           
           <div className="mb-4">
             <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
-              Data
+              Date
             </label>
             <input
               id="date"
@@ -87,7 +87,7 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div>
               <label htmlFor="startTime" className="block text-sm font-medium text-gray-700 mb-1">
-                Tempo de início
+                Start Time
               </label>
               <select
                 id="startTime"
@@ -105,13 +105,13 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
             </div>
             
             <div>
-              <label htmlFor="end_time" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="endTime" className="block text-sm font-medium text-gray-700 mb-1">
                 End Time
               </label>
               <select
-                id="end_time"
-                value={end_time}
-                onChange={(e) => setend_time(e.target.value)}
+                id="endTime"
+                value={endTime}
+                onChange={(e) => setEndTime(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               >
@@ -126,7 +126,7 @@ const ShiftForm: React.FC<ShiftFormProps> = ({ initialDate, onSubmit, onClose })
           
           <div className="mb-6">
             <label htmlFor="notes" className="block text-sm font-medium text-gray-700 mb-1">
-              Notas (Optional)
+              Notes (Optional)
             </label>
             <textarea
               id="notes"
