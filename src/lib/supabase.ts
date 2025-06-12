@@ -1,7 +1,13 @@
-// supabase.ts
+// Exemplo em Node.js
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://smdcewzikyrwlxrmipnd.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNtZGNld3ppa3lyd2x4cm1pcG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzNDY3NzUsImV4cCI6MjA2MzkyMjc3NX0.oSWTZjtEdEbLYIycrt-ciRN2vi_4sP5wr-c87JZfFQU'
+// Use as variáveis de ambiente para segurança
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY // <-- Use a chave de serviço!
 
-export const supabase = createClient(supabaseUrl, supabaseKey)
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+// Agora, esta operação vai ignorar as políticas de RLS
+const { data, error } = await supabase
+  .from('users')
+  .insert([{ name: 'Novo Usuário', role: 'member' }])
