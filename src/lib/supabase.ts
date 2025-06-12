@@ -1,11 +1,7 @@
-// Exemplo em Node.js
+import { createClient } from '@supabase/supabase-js';
+import type { Database } from './database.types';
 
-// Use as variáveis de ambiente para segurança
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY // <-- Use a chave de serviço!
+const supabaseUrl = import.meta.env.SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be defined in environment variables.');
-}
-
-// Agora, esta operação vai ignorar as políticas de RLS
+export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
